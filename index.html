@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VLT: Vendas e Liderança Training | Instituto Felipe Castro</title>
+<meta name="description" content="VLT: Imersão de Vendas, Empreendedorismo e Liderança com PNL aplicada. Um dia intensivo com Felipe Castro para empresários e líderes comerciais. Araraquara-SP." />
+<meta property="og:title" content="VLT: Vendas e Liderança Training | Felipe Castro" />
+<meta property="og:description" content="Onde técnica encontra propósito. Imersão intensiva de Vendas e Liderança com PNL aplicada." />
+<meta property="og:image" content="files/felipecastro.JPEG" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="logo/Logo_VLT.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0a0c;
+    --bg-2:#111114;
+    --bg-3:#18181d;
+    --surface:#1c1c22;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.14);
+    --red:#c41a1a;
+    --red-bright:#d42020;
+    --red-deep:#7a1015;
+    --red-soft:rgba(196,26,26,.12);
+    --white:#ffffff;
+    --text:#ececed;
+    --muted:#a5a5af;
+    --muted-2:#7c7c86;
+    --gold:#e8c267;
+    --radius:18px;
+    --radius-sm:12px;
+    --maxw:1140px;
+    --shadow:0 24px 60px -20px rgba(0,0,0,.7);
+    --shadow-red:0 18px 50px -12px rgba(196,26,26,.45);
+    --grad-red:linear-gradient(135deg,#d42020 0%,#7a1015 100%);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;margin:0;padding:0;overflow-x:hidden;background:#000}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.1;letter-spacing:-.02em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  .vlt-page .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .vlt-page{width:100%;max-width:100%;margin:0;overflow-x:clip;background:var(--bg)}
+  :where(body *):has(.vlt-page){
+    max-width:100%!important;width:100%!important;
+    padding-left:0!important;padding-right:0!important;
+    margin-left:0!important;margin-right:0!important;
+  }
+  .vlt-page .section{padding:86px 0;position:relative}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red-bright);margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:inline-block}
+  .section-title{font-size:clamp(1.7rem,4.2vw,2.9rem);font-weight:800;color:#fff;margin-bottom:18px}
+  .section-title .hl{color:var(--red-bright)}
+  .lead{font-size:1.08rem;color:var(--muted);max-width:680px}
+  .center{text-align:center}
+  .center .lead{margin-left:auto;margin-right:auto}
+  .center .eyebrow::before{display:none}
+  .btn-note{display:block;text-align:center;font-size:.82rem;color:var(--muted-2);margin-top:12px}
+
+  /* Botões */
+  .vlt-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.02rem;padding:17px 34px;border-radius:999px;cursor:pointer;border:none;transition:transform .18s,box-shadow .18s,background .18s;text-align:center;line-height:1.15}
+  .vlt-page .btn-primary{background:var(--grad-red);color:#fff;box-shadow:var(--shadow-red);position:relative;overflow:hidden}
+  .vlt-page .btn-primary::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);animation:vlt-shine 4.5s ease-in-out infinite}
+  @keyframes vlt-shine{0%,60%{left:-120%}100%{left:140%}}
+  .vlt-page .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 60px -10px rgba(212,32,32,.6)}
+  .vlt-page .btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--line-strong)}
+  .vlt-page .btn-ghost:hover{border-color:var(--red-bright);background:var(--red-soft)}
+  .vlt-page .btn-lg{padding:20px 44px;font-size:1.12rem}
+  .vlt-page .btn-block{display:flex;width:100%}
+
+  /* Topbar */
+  .vlt-page .topbar{background:var(--grad-red);color:#fff;text-align:center;font-family:'Sora',sans-serif;font-weight:600;font-size:.84rem;letter-spacing:.02em;padding:9px 16px;position:relative;z-index:60}
+  .vlt-page .topbar strong{font-weight:800}
+
+  /* Header */
+  .vlt-page header.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .3s}
+  .vlt-page .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .vlt-page .brand-logo{display:flex;align-items:center;gap:11px}
+  .vlt-page .brand-logo img{height:42px;width:auto}
+  .vlt-page .nav-links{display:flex;gap:28px;align-items:center}
+  .vlt-page .nav-links a{font-size:.92rem;color:var(--muted);font-weight:500;transition:color .15s}
+  .vlt-page .nav-links a:hover{color:#fff}
+  .vlt-page .nav-cta{padding:11px 22px;font-size:.9rem}
+  @media(max-width:900px){.vlt-page .nav-links{display:none}}
+
+  /* Decorativo */
+  .vlt-page .diag{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .vlt-page .diag::before,.vlt-page .diag::after{content:"";position:absolute;width:160%;height:280px;background:linear-gradient(90deg,transparent,rgba(196,26,26,.14),transparent);transform:rotate(-18deg)}
+  .vlt-page .diag::before{top:-60px;left:-30%}
+  .vlt-page .diag::after{bottom:-40px;right:-30%;background:linear-gradient(90deg,transparent,rgba(196,26,26,.07),transparent)}
+
+  /* Hero */
+  .vlt-page .hero{position:relative;padding:64px 0 72px;overflow:hidden;background:radial-gradient(900px 500px at 80% -10%,rgba(196,26,26,.22),transparent 60%),radial-gradient(700px 600px at -10% 30%,rgba(122,16,21,.18),transparent 55%),var(--bg)}
+  .vlt-page .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:2}
+  .vlt-page .hero h1{font-size:clamp(2.1rem,5.4vw,3.55rem);font-weight:800;color:#fff;margin:16px 0 18px}
+  .vlt-page .hero h1 .hl{color:var(--red-bright)}
+  .vlt-page .hero p.sub{font-size:1.12rem;color:var(--muted);max-width:540px;margin-bottom:26px}
+  .vlt-page .hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .vlt-page .meta-chip{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);padding:11px 16px;border-radius:12px;font-size:.92rem;font-weight:600;color:#fff}
+  .vlt-page .meta-chip svg{width:17px;height:17px;color:var(--red-bright);flex-shrink:0}
+  .vlt-page .hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .vlt-page .hero-visual{position:relative;max-width:370px;margin-left:auto;margin-right:auto}
+  .vlt-page .hero-visual .frame{border-radius:22px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:var(--shadow);position:relative}
+  .vlt-page .hero-visual .frame img{width:100%;height:auto;object-fit:cover;max-height:520px}
+  .vlt-page .hero-visual .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 80px rgba(0,0,0,.35);pointer-events:none}
+  .vlt-page .hero-visual .ring{position:absolute;inset:-2px;border-radius:24px;background:var(--grad-red);filter:blur(26px);opacity:.35;z-index:-1}
+  @media(max-width:880px){.vlt-page .hero-grid{grid-template-columns:1fr;gap:34px}.vlt-page .hero-visual{display:none}}
+
+  /* Countdown */
+  .vlt-page .countdown-wrap{margin-top:30px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .vlt-page .countdown-label{font-family:'Sora',sans-serif;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px;font-weight:600}
+  .vlt-page .countdown{display:flex;gap:10px}
+  .vlt-page .cd-box{flex:1;background:var(--bg-3);border:1px solid var(--line);border-radius:12px;padding:12px 6px;text-align:center}
+  .vlt-page .cd-num{font-family:'Sora',sans-serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:#fff;line-height:1}
+  .vlt-page .cd-unit{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:6px;font-weight:600}
+
+  /* Pillars strip */
+  .vlt-page .pillars-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .vlt-page .pillars-strip .container{display:grid;grid-template-columns:repeat(4,1fr)}
+  .vlt-page .pstrip-item{padding:30px 22px;text-align:center;border-right:1px solid var(--line)}
+  .vlt-page .pstrip-item:last-child{border-right:none}
+  .vlt-page .pstrip-item .n{font-family:'Sora',sans-serif;font-weight:800;color:var(--red-bright);font-size:.8rem;letter-spacing:.2em;margin-bottom:8px}
+  .vlt-page .pstrip-item .t{font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:1.02rem}
+  @media(max-width:760px){
+    .vlt-page .pillars-strip .container{grid-template-columns:repeat(2,1fr)}
+    .vlt-page .pstrip-item:nth-child(2){border-right:none}
+    .vlt-page .pstrip-item:nth-child(1),.vlt-page .pstrip-item:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+
+  /* Vídeo */
+  .vlt-page .video-wrap{max-width:800px;margin:40px auto 0;position:relative;padding-bottom:56.25%;height:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-strong);box-shadow:var(--shadow)}
+  .vlt-page .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+  /* Dor */
+  .vlt-page .pain-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+  .vlt-page .pain-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:var(--radius-sm);padding:20px 22px}
+  .vlt-page .pain-item .x{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--red-soft);display:grid;place-items:center;color:var(--red-bright);font-weight:800;margin-top:2px}
+  .vlt-page .pain-item p{color:var(--text);font-size:.98rem}
+  .vlt-page .pain-item p strong{color:#fff}
+  @media(max-width:700px){.vlt-page .pain-list{grid-template-columns:1fr}}
+  .vlt-page .pain-bridge{margin-top:40px;text-align:center;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.2rem,3vw,1.6rem);color:#fff;max-width:760px;margin-left:auto;margin-right:auto}
+  .vlt-page .pain-bridge .hl{color:var(--red-bright)}
+
+  /* About */
+  .vlt-page .about{background:var(--bg-2);position:relative;overflow:hidden}
+  .vlt-page .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;position:relative;z-index:2}
+  .vlt-page .about-card{background:linear-gradient(160deg,rgba(196,26,26,.14),rgba(28,28,34,.4));border:1px solid var(--line-strong);border-radius:var(--radius);padding:34px}
+  .vlt-page .about-card h3{color:#fff;font-size:1.3rem;margin-bottom:14px}
+  .vlt-page .about-card p{color:var(--muted);margin-bottom:14px}
+  .vlt-page .about-card p:last-child{margin-bottom:0}
+  .vlt-page .quote{font-family:'Sora',sans-serif;font-weight:600;color:#fff;font-size:1.15rem;border-left:3px solid var(--red);padding-left:18px;margin-top:8px}
+  @media(max-width:840px){.vlt-page .about-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* Cards 3 (Mentalidades) */
+  .vlt-page .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .vlt-page .mcard{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
+  .vlt-page .mcard:hover{transform:translateY(-5px);border-color:rgba(196,26,26,.5);box-shadow:var(--shadow)}
+  .vlt-page .mcard .ic{width:54px;height:54px;border-radius:14px;background:var(--red-soft);display:grid;place-items:center;margin-bottom:18px;border:1px solid rgba(196,26,26,.25)}
+  .vlt-page .mcard .ic svg{width:26px;height:26px;color:var(--red-bright)}
+  .vlt-page .mcard h3{color:#fff;font-size:1.16rem;margin-bottom:10px}
+  .vlt-page .mcard p{color:var(--muted);font-size:.95rem}
+  .vlt-page .mcard .idx{position:absolute;top:18px;right:20px;font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;color:rgba(255,255,255,.05)}
+  @media(max-width:980px){.vlt-page .cards-3{grid-template-columns:1fr}}
+
+  /* Benefits checklist */
+  .vlt-page .benefits{background:var(--bg-2)}
+  .vlt-page .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:40px}
+  .vlt-page .bitem{display:flex;gap:14px;align-items:flex-start;padding:6px 0}
+  .vlt-page .bitem .ck{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:var(--grad-red);display:grid;place-items:center;margin-top:2px}
+  .vlt-page .bitem .ck svg{width:15px;height:15px;color:#fff}
+  .vlt-page .bitem p{color:var(--text);font-size:1rem}
+  .vlt-page .bitem p strong{color:#fff}
+  @media(max-width:720px){.vlt-page .bgrid{grid-template-columns:1fr;gap:8px}}
+
+  /* CTA intermediária */
+  .vlt-page .mid-cta{position:relative;text-align:center;overflow:hidden;background:radial-gradient(700px 400px at 50% 50%,rgba(196,26,26,.2),transparent 60%),var(--bg-3)}
+  .vlt-page .mid-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#fff;margin-bottom:14px;position:relative;z-index:2}
+  .vlt-page .mid-cta p{color:var(--muted);font-size:1.05rem;max-width:580px;margin:0 auto 28px;position:relative;z-index:2}
+  .vlt-page .mid-cta .btn{position:relative;z-index:2}
+
+  /* For you / Not for you */
+  .vlt-page .foryou-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .vlt-page .fy-col{border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line)}
+  .vlt-page .fy-yes{background:linear-gradient(160deg,rgba(196,26,26,.12),rgba(28,28,34,.3));border-color:rgba(196,26,26,.35)}
+  .vlt-page .fy-no{background:var(--bg-2)}
+  .vlt-page .fy-col h3{display:flex;align-items:center;gap:10px;font-size:1.18rem;color:#fff;margin-bottom:20px}
+  .vlt-page .fy-col h3 .badge{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex-shrink:0}
+  .vlt-page .fy-yes .badge{background:var(--grad-red)}
+  .vlt-page .fy-no .badge{background:#2a2a31}
+  .vlt-page .fy-col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .vlt-page .fy-col li{display:flex;gap:12px;align-items:flex-start;color:var(--text);font-size:.97rem}
+  .vlt-page .fy-col li svg{width:18px;height:18px;flex-shrink:0;margin-top:3px}
+  .vlt-page .fy-yes li svg{color:var(--red-bright)}
+  .vlt-page .fy-no li svg{color:var(--muted-2)}
+  @media(max-width:760px){.vlt-page .foryou-grid{grid-template-columns:1fr}}
+
+  /* Timeline */
+  .vlt-page .timeline{margin-top:46px;max-width:780px;margin-left:auto;margin-right:auto;position:relative}
+  .vlt-page .timeline::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--red),rgba(196,26,26,.15))}
+  .vlt-page .tl-item{display:flex;gap:22px;padding-bottom:26px;position:relative}
+  .vlt-page .tl-item:last-child{padding-bottom:0}
+  .vlt-page .tl-dot{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--bg-3);border:2px solid var(--red);display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:700;color:var(--red-bright);font-size:.74rem;z-index:1}
+  .vlt-page .tl-body{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 22px;flex:1}
+  .vlt-page .tl-body h4{color:#fff;font-size:1.05rem;margin-bottom:5px}
+  .vlt-page .tl-body p{color:var(--muted);font-size:.93rem}
+
+  /* Mentor */
+  .vlt-page .mentor{background:var(--bg-2);overflow:hidden}
+  .vlt-page .mentor-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+  .vlt-page .mentor-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-strong);box-shadow:var(--shadow);max-width:330px;margin-left:auto;margin-right:auto}
+  .vlt-page .mentor-photo img{width:100%;height:auto;object-fit:cover;display:block}
+  .vlt-page .mentor-photo .ring{position:absolute;inset:-3px;border-radius:var(--radius);background:var(--grad-red);filter:blur(28px);opacity:.4;z-index:-1}
+  .vlt-page .mentor h2 .name{color:var(--red-bright)}
+  .vlt-page .mentor-tags{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 24px}
+  .vlt-page .tag{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:.84rem;font-weight:600;color:#fff}
+  .vlt-page .mentor p{color:var(--muted);margin-bottom:14px}
+  .vlt-page .mentor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .vlt-page .mstat{background:var(--bg-3);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px;text-align:center}
+  .vlt-page .mstat .v{font-family:'Sora',sans-serif;font-weight:800;font-size:1.7rem;color:#fff}
+  .vlt-page .mstat .l{font-size:.78rem;color:var(--muted-2);margin-top:4px}
+  @media(max-width:860px){.vlt-page .mentor-grid{grid-template-columns:1fr;gap:32px}.vlt-page .mentor-photo{max-width:420px;margin:0 auto}}
+
+  /* Depoimentos */
+  .vlt-page .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .vlt-page .tcard{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:16px}
+  .vlt-page .tcard .stars{color:var(--gold);letter-spacing:2px;font-size:1rem}
+  .vlt-page .tcard p{color:var(--text);font-size:.96rem;flex:1}
+  .vlt-page .tperson{display:flex;align-items:center;gap:13px}
+  .vlt-page .tperson .av{width:44px;height:44px;border-radius:50%;background:var(--grad-red);display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:1rem;flex-shrink:0}
+  .vlt-page .tperson .nm{font-weight:700;color:#fff;font-size:.94rem}
+  .vlt-page .tperson .rl{font-size:.8rem;color:var(--muted-2)}
+  @media(max-width:880px){.vlt-page .tgrid{grid-template-columns:1fr}}
+
+  /* Detalhes do evento */
+  .vlt-page .details{position:relative;overflow:hidden;background:radial-gradient(700px 400px at 90% 0%,rgba(196,26,26,.2),transparent 60%),var(--bg)}
+  .vlt-page .details-box{background:var(--bg-2);border:1px solid var(--line-strong);border-radius:var(--radius);padding:8px;position:relative;z-index:2}
+  .vlt-page .details-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:14px;overflow:hidden}
+  .vlt-page .dcell{background:var(--bg-2);padding:30px 24px;text-align:center}
+  .vlt-page .dcell svg{width:26px;height:26px;color:var(--red-bright);margin:0 auto 12px}
+  .vlt-page .dcell .k{font-family:'Sora',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:6px;font-weight:600}
+  .vlt-page .dcell .v{font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:1.05rem}
+  @media(max-width:760px){.vlt-page .details-inner{grid-template-columns:1fr 1fr}}
+
+  /* Pricing */
+  .vlt-page .pricing{background:var(--bg-2)}
+  .vlt-page .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;align-items:stretch}
+  .vlt-page .plan{background:var(--bg-3);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;position:relative}
+  .vlt-page .plan.featured{border-color:var(--red);box-shadow:var(--shadow-red);transform:scale(1.03)}
+  .vlt-page .plan .lot{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+  .vlt-page .plan.featured .lot{color:var(--red-bright)}
+  .vlt-page .plan .tagpill{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad-red);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:999px;white-space:nowrap}
+  .vlt-page .plan .from{color:var(--muted-2);font-size:.9rem;margin-top:18px;text-decoration:line-through}
+  .vlt-page .plan .price{font-family:'Sora',sans-serif;font-weight:800;color:#fff;font-size:2.4rem;margin:4px 0 2px;line-height:1}
+  .vlt-page .plan .price small{font-size:1rem;font-weight:600;color:var(--muted)}
+  .vlt-page .plan .inst{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+  .vlt-page .plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:24px;flex:1}
+  .vlt-page .plan li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:var(--text)}
+  .vlt-page .plan li svg{width:16px;height:16px;color:var(--red-bright);flex-shrink:0;margin-top:4px}
+  .vlt-page .plan .status{font-size:.82rem;font-weight:700;font-family:'Sora',sans-serif;margin-bottom:14px}
+  .vlt-page .plan .status.closed{color:var(--muted-2)}
+  .vlt-page .plan .status.active{color:var(--red-bright)}
+  .vlt-page .plan .status.soon{color:var(--gold)}
+  .vlt-page .plan.closed-plan{opacity:.55}
+  @media(max-width:860px){.vlt-page .price-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.vlt-page .plan.featured{transform:none}}
+
+  /* Garantia */
+  .vlt-page .guarantee{background:var(--bg)}
+  .vlt-page .g-box{display:flex;gap:34px;align-items:center;background:linear-gradient(160deg,rgba(196,26,26,.12),rgba(28,28,34,.35));border:1px solid var(--line-strong);border-radius:var(--radius);padding:40px}
+  .vlt-page .g-seal{flex-shrink:0;width:130px;height:130px;border-radius:50%;background:var(--bg-3);border:2px dashed var(--red);display:grid;place-items:center;text-align:center}
+  .vlt-page .g-seal .d{font-family:'Sora',sans-serif;font-weight:800;color:var(--red-bright);font-size:1.7rem;line-height:1}
+  .vlt-page .g-seal .t{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .vlt-page .g-box h3{color:#fff;font-size:1.4rem;margin-bottom:10px}
+  .vlt-page .g-box p{color:var(--muted)}
+  @media(max-width:640px){.vlt-page .g-box{flex-direction:column;text-align:center;padding:32px 24px}}
+
+  /* FAQ */
+  .vlt-page .faq-list{max-width:780px;margin:46px auto 0}
+  .vlt-page .faq-item{border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;background:var(--bg-2);overflow:hidden}
+  .vlt-page .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;background:none;border:none;text-align:left;font-family:'Sora',sans-serif;font-weight:600;font-size:1.02rem;color:#fff}
+  .vlt-page .faq-q .ico{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--red-soft);color:var(--red-bright);display:grid;place-items:center;font-size:1.2rem;transition:transform .25s;font-weight:400}
+  .vlt-page .faq-item.open .faq-q .ico{transform:rotate(45deg)}
+  .vlt-page .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .vlt-page .faq-a p{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
+
+  /* Final CTA */
+  .vlt-page .final{position:relative;overflow:hidden;text-align:center;background:radial-gradient(800px 460px at 50% 120%,rgba(212,32,32,.25),transparent 60%),var(--bg-2)}
+  .vlt-page .final h2{font-size:clamp(1.9rem,5vw,3.1rem);font-weight:800;color:#fff;margin-bottom:18px;position:relative;z-index:2}
+  .vlt-page .final h2 .hl{color:var(--red-bright)}
+  .vlt-page .final p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 32px;position:relative;z-index:2}
+  .vlt-page .final .btn{position:relative;z-index:2}
+
+  /* Footer */
+  .vlt-page footer{background:var(--bg);border-top:1px solid var(--line);padding:50px 0 40px}
+  .vlt-page .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+  .vlt-page .foot-brand{display:flex;flex-direction:column;gap:12px}
+  .vlt-page .foot-brand-inner{display:flex;align-items:center;gap:10px}
+  .vlt-page .foot-brand-inner img{height:34px;width:auto}
+  .vlt-page .foot-brand p{color:var(--muted-2);font-size:.9rem;max-width:320px}
+  .vlt-page .foot-links{display:flex;gap:14px}
+  .vlt-page .foot-links a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:all .15s}
+  .vlt-page .foot-links a:hover{border-color:var(--red-bright);color:#fff;background:var(--red-soft)}
+  .vlt-page .foot-links a svg{width:19px;height:19px}
+  .vlt-page .foot-bottom{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted-2);font-size:.82rem}
+
+  /* Mobile sticky */
+  .vlt-page .mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:55;background:rgba(10,10,12,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 16px;display:none;align-items:center;gap:14px;justify-content:space-between}
+  .vlt-page .mobile-cta .mc-info{font-family:'Sora',sans-serif;white-space:nowrap;line-height:1.2}
+  .vlt-page .mobile-cta .mc-info .a{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
+  .vlt-page .mobile-cta .mc-info .b{font-size:1.18rem;font-weight:800;color:#fff}
+  .vlt-page .mobile-cta .btn{padding:15px 26px;font-size:.96rem;flex:0 0 auto;width:auto}
+  @media(max-width:760px){.vlt-page .mobile-cta{display:flex}body{padding-bottom:78px}}
+
+  /* Seção oculta / formulário */
+  .vlt-hidden{display:none!important}
+  .vlt-page #garanta-vaga .form-embed{max-width:680px;margin:34px auto 0}
+  .vlt-page #garanta-vaga iframe{display:block;width:100%;min-height:500px;border:none;border-radius:8px}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){
+    .vlt-page .section{padding:62px 0}
+    .vlt-page .hero h1{font-size:2rem}
+    .vlt-page .btn{width:100%;padding:16px 24px}
+    .vlt-page .hero-cta-row{flex-direction:column;align-items:stretch}
+    .vlt-page .g-seal{width:110px;height:110px}
+  }
+</style>
+</head>
+<body>
+
+<div class="vlt-page">
+
+<!-- TOPBAR -->
+<div class="topbar" id="topbar">
+  <strong>VAGAS ABERTAS</strong> | Imersão VLT: Vendas e Liderança Training com Felipe Castro | Araraquara-SP
+</div>
+
+<!-- HEADER -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#topo" class="brand-logo" aria-label="VLT">
+      <img src="logo/Logo_VLT.png" alt="VLT Vendas e Liderança Training" />
+    </a>
+    <nav class="nav-links">
+      <a href="#imersao">A Imersão</a>
+      <a href="#mentalidades">Mentalidades</a>
+      <a href="#mentor">Felipe Castro</a>
+      <a href="#programacao">Programação</a>
+      <a href="#investimento">Investimento</a>
+    </nav>
+    <a href="#investimento" class="btn btn-primary nav-cta">Garantir vaga</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="diag"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Imersão Presencial</span>
+        <h1>Você vende. Você lidera. <span class="hl">Mas sem a mentalidade certa, há um teto que técnica nenhuma quebra.</span></h1>
+        <p class="sub">VLT é uma imersão presencial de um dia inteiro sobre Vendas, Empreendedorismo e Liderança com PNL aplicada, para empresários e líderes comerciais que querem resultado consistente sem perder a essência.</p>
+
+        <div class="hero-meta">
+          <span class="meta-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            [DATA DO EVENTO]
+          </span>
+          <span class="meta-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Araraquara · SP
+          </span>
+          <span class="meta-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            Dia inteiro · Presencial
+          </span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#investimento" class="btn btn-primary btn-lg">Quero meu lugar no VLT &rarr;</a>
+          <a href="#imersao" class="btn btn-ghost btn-lg">Entender a imersão</a>
+        </div>
+
+        <div class="countdown-wrap">
+          <div class="countdown-label">A imersão começa em</div>
+          <div class="countdown" id="countdown">
+            <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Dias</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Horas</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-min">00</div><div class="cd-unit">Min</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-sec">00</div><div class="cd-unit">Seg</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="ring"></div>
+        <div class="frame">
+          <img src="files/felipecastro.JPEG" alt="Felipe Castro, VLT Vendas e Liderança Training" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS STRIP -->
+<div class="pillars-strip">
+  <div class="container">
+    <div class="pstrip-item"><div class="n">PILAR 01</div><div class="t">PNL Aplicada</div></div>
+    <div class="pstrip-item"><div class="n">PILAR 02</div><div class="t">Vendas</div></div>
+    <div class="pstrip-item"><div class="n">PILAR 03</div><div class="t">Empreendedorismo</div></div>
+    <div class="pstrip-item"><div class="n">PILAR 04</div><div class="t">Liderança</div></div>
+  </div>
+</div>
+
+<!-- VÍDEO -->
+<section class="section" id="video">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Conheça o VLT</span>
+      <h2 class="section-title">Uma imersão para <span class="hl">impulsionar</span> seus resultados</h2>
+      <p class="lead">Assista e entenda por que empresários e líderes comerciais estão transformando a forma como vendem e lideram.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <iframe src="https://www.youtube.com/embed/-aWlmfIXJDg" title="Conheça o VLT: Vendas e Liderança Training" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="section" id="imersao">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Você reconhece isso?</span>
+      <h2 class="section-title">Você trabalha muito. Vende todo dia. <span class="hl">Mas o resultado não acompanha o esforço.</span></h2>
+      <p class="lead">Técnica sem mentalidade é como acelerar com o freio de mão puxado. Você gasta energia, tempo e motivação, e o resultado continua aquém do que poderia ser.</p>
+    </div>
+
+    <div class="pain-list">
+      <div class="pain-item reveal"><span class="x">!</span><p>Você bate meta, mas depende de esforço bruto, e o <strong>resultado não é consistente</strong> mês a mês.</p></div>
+      <div class="pain-item reveal"><span class="x">!</span><p>Sua equipe espera você dar cada passo, e você já está <strong>esgotado de carregar tudo sozinho</strong>.</p></div>
+      <div class="pain-item reveal"><span class="x">!</span><p>Você conhece técnicas de vendas, mas na hora da negociação <strong>não aplica com naturalidade</strong>.</p></div>
+      <div class="pain-item reveal"><span class="x">!</span><p>Você perde negócios que deveria fechar porque <strong>não transmite valor</strong> com a autoridade que merece.</p></div>
+      <div class="pain-item reveal"><span class="x">!</span><p>Você sabe que resultado vem de pessoas, mas não sabe como <strong>tirar o melhor de cada uma</strong>.</p></div>
+      <div class="pain-item reveal"><span class="x">!</span><p>Você sente que poderia <strong>vender muito mais</strong> com a mesma equipe, se soubesse exatamente o que mudar.</p></div>
+    </div>
+
+    <p class="pain-bridge reveal">A diferença entre quem sobrevive no mercado e quem domina não é talento. É a <span class="hl">mentalidade</span> por trás de cada venda e cada decisão de liderança.</p>
+  </div>
+</section>
+
+<!-- O QUE É O VLT -->
+<section class="section about">
+  <div class="diag"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">O que é o VLT</span>
+        <h2 class="section-title">Onde técnica encontra <span class="hl">propósito</span>.</h2>
+        <p class="lead" style="margin-bottom:18px">VLT não é mais um treinamento de vendas. É uma imersão que une PNL, estratégia comercial, empreendedorismo e liderança para que você pare de vender no automático e comece a liderar resultados com intenção, presença e método. Com Felipe Castro, você vai descobrir que vender mais e liderar melhor são consequências de quem você se torna no processo.</p>
+        <div class="quote">"Quando você muda a mentalidade, muda o resultado. E quando muda o resultado, muda a história."</div>
+      </div>
+      <div class="about-card reveal">
+        <h3>Por que PNL, Vendas, Empreendedorismo e Liderança juntos?</h3>
+        <p>Porque resultado real não nasce de uma só habilidade. <strong style="color:#fff">Vendas</strong> sem liderança gera dependência. <strong style="color:#fff">Liderança</strong> sem visão empreendedora estagna.</p>
+        <p><strong style="color:#fff">Empreendedorismo</strong> sem técnica de vendas não converte. E <strong style="color:#fff">nada disso funciona</strong> sem trabalhar o comportamento e a mentalidade que sustentam tudo.</p>
+        <p>O VLT costura os quatro pilares em um único dia para que você saia com clareza para vender, método para liderar e mentalidade para crescer de verdade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 MENTALIDADES -->
+<section class="section" id="mentalidades">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">As 3 Mentalidades</span>
+      <h2 class="section-title">O que você vai <span class="hl">desenvolver</span> em um único dia</h2>
+      <p class="lead">Cada bloco da imersão trabalha uma mentalidade, com conteúdo, prática e ferramentas de PNL aplicadas ao contexto real do seu negócio.</p>
+    </div>
+
+    <div class="cards-3">
+      <div class="mcard reveal">
+        <span class="idx">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>Mentalidade de Vendas</h3>
+        <p>Descubra por que 85% da performance em vendas vem do comportamento e da atitude. Explore o modelo DISC, trabalhe crenças e emoções, aprenda perguntas SPIN e domine técnicas de persuasão.</p>
+      </div>
+      <div class="mcard reveal">
+        <span class="idx">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Mentalidade Empreendedora</h3>
+        <p>Torne-se um empreendedor antifrágil: identifique oportunidades, avalie riscos, desenvolva a atitude certa e aplique ferramentas práticas para transformar ideias em negócios de sucesso.</p>
+      </div>
+      <div class="mcard reveal">
+        <span class="idx">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Mentalidade de Liderança</h3>
+        <p>Aprenda a gerir seu tempo e tomar decisões em cenários complexos. Desenvolva inteligência emocional, carisma e coaching para inspirar sua equipe e use a roda de liderança para se autoavaliar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section benefits">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">A transformação</span>
+      <h2 class="section-title">Como você sai <span class="hl">diferente</span> dessa imersão</h2>
+      <p class="lead">Não é sobre sair motivado. É sobre sair com ferramentas que funcionam na segunda-feira, na negociação difícil, na reunião que define o mês.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Vender mais</strong> com estratégia, não com pressão.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Liderar uma equipe</strong> que executa com autonomia e comprometimento.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Negociar com segurança</strong> e transmitir valor real ao cliente.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Identificar o perfil comportamental</strong> de clientes e liderados com DISC.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Aplicar PNL</strong> em vendas, gestão de pessoas e tomada de decisão.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Resultado consistente</strong>, mês após mês, sem depender de sorte.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Decisões melhores</strong> em cenários de pressão e incerteza.</p></div>
+      <div class="bitem reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p><strong>Networking</strong> com empresários e líderes comerciais no mesmo nível.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA INTERMEDIÁRIA -->
+<section class="section mid-cta">
+  <div class="container">
+    <h2 class="reveal">Pronto para transformar seus <span class="hl">resultados</span>?</h2>
+    <p class="reveal">Não espere o próximo mês para perceber que está vendendo abaixo do potencial e liderando no automático. O VLT vai te dar as ferramentas antes.</p>
+    <a href="#investimento" class="btn btn-primary btn-lg reveal">Quero garantir minha vaga &rarr;</a>
+  </div>
+</section>
+
+<!-- PARA QUEM É / NÃO É -->
+<section class="section">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Antes de decidir</span>
+      <h2 class="section-title">O VLT foi criado <span class="hl">para você</span>, se você se reconhece aqui.</h2>
+    </div>
+    <div class="foryou-grid">
+      <div class="fy-col fy-yes reveal">
+        <h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>É para você se…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Você é empresário ou líder comercial e quer multiplicar resultado com o mesmo time.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Você vende todos os dias e quer fechar mais e melhor, com método.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Você quer desenvolver mentalidade de vendas, empreendedorismo e liderança no mesmo dia.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Você acredita que resultado consistente vem de comportamento, não só de técnica.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Você está cansado de treinamentos teóricos e quer algo prático e aplicável.</li>
+        </ul>
+      </div>
+      <div class="fy-col fy-no reveal">
+        <h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Não é para você se…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Você procura um script mágico para decorar e repetir sem entender o processo.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Você acredita que pressão é o único caminho para resultado comercial.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Você não está disposto a olhar para seu comportamento e mentalidade.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Você quer assistir passivamente e sair como entrou.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pain-bridge reveal" style="margin-top:36px">Não importa o quanto você sabe. Importa <span class="hl">o que você faz</span> com o que sabe.</p>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="section about" id="programacao">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Como será o dia</span>
+      <h2 class="section-title">A jornada do <span class="hl">VLT</span>, do início ao fim</h2>
+      <p class="lead">Um dia inteiro estruturado em blocos que desenvolvem as três mentalidades em progressão prática e acelerada.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot">08:00</div><div class="tl-body"><h4>Credenciamento &amp; Conexão</h4><p>Recepção, boas-vindas e os primeiros contatos com empresários e líderes que vivem desafios parecidos com os seus.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">08:30</div><div class="tl-body"><h4>Abertura: Desperte sua Mentalidade de Sucesso</h4><p>Felipe Castro apresenta o conceito que sustenta a imersão: como PNL, vendas, empreendedorismo e liderança se conectam para gerar resultado real.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">09:30</div><div class="tl-body"><h4>Bloco 1: Mentalidade de Vendas</h4><p>Modelo DISC, perguntas SPIN, crenças limitantes em vendas e técnicas de persuasão ética. Como fazer o cliente dizer sim com confiança.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">12:30</div><div class="tl-body"><h4>Intervalo</h4><p>Pausa para almoço e networking entre os participantes.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">14:00</div><div class="tl-body"><h4>Bloco 2: Mentalidade Empreendedora</h4><p>Identificação de oportunidades, avaliação de riscos e ferramentas práticas para transformar ideias em negócios de sucesso com mentalidade antifrágil.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">17:00</div><div class="tl-body"><h4>Network Break</h4><p>Pausa estratégica para conexões que podem levar seu negócio para outro nível.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">17:30</div><div class="tl-body"><h4>Bloco 3: Mentalidade de Liderança</h4><p>Gestão de tempo, tomada de decisão, inteligência emocional e coaching para inspirar sua equipe. Roda de liderança para autoavaliação.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">20:00</div><div class="tl-body"><h4>Encerramento &amp; Plano de Ação</h4><p>Consolidação da jornada e um plano prático para aplicar as três mentalidades a partir da próxima segunda-feira.</p></div></div>
+    </div>
+    <p class="btn-note" style="margin-top:24px">*Programação pode sofrer pequenos ajustes para enriquecer a experiência.</p>
+  </div>
+</section>
+
+<!-- MENTOR -->
+<section class="section mentor" id="mentor">
+  <div class="container">
+    <div class="mentor-grid">
+      <div class="mentor-photo reveal">
+        <div class="ring"></div>
+        <img src="files/felipecastro-e-joeljota.jpeg" alt="Felipe Castro, Mentor VLT" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Seu mentor</span>
+        <h2 class="section-title">Felipe <span class="name">Castro</span></h2>
+        <div class="mentor-tags">
+          <span class="tag">Vendas</span>
+          <span class="tag">Liderança</span>
+          <span class="tag">PNL</span>
+          <span class="tag">Empreendedorismo</span>
+        </div>
+        <p>Felipe Castro é o mentor à frente do VLT e fundador do Instituto Felipe Castro, em Araraquara-SP. Há mais de sete anos, ele forma líderes e treina equipes comerciais a transformar mentalidade em resultado, unindo PNL, Perfil Comportamental e Inteligência Emocional com a prática real do mercado.</p>
+        <p>Mais do que técnica, Felipe conduz uma experiência: um espaço onde empresários e líderes comerciais descobrem que vender mais e liderar melhor são consequências de quem você se torna no processo.</p>
+        <div class="mentor-stats">
+          <div class="mstat"><div class="v">+7</div><div class="l">Anos de experiência</div></div>
+          <div class="mstat"><div class="v">+2.000</div><div class="l">Pessoas impactadas</div></div>
+          <div class="mstat"><div class="v">100%</div><div class="l">Presencial e prático</div></div>
+        </div>
+        <div style="margin-top:30px"><a href="#investimento" class="btn btn-primary">Quero meu lugar no VLT &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Quem já viveu, recomenda</span>
+      <h2 class="section-title">A transformação na <span class="hl">voz</span> de quem participou</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"O Felipe me transformou como empresária. Hoje tenho mais garra, mais vontade e sou mais atuante no meu mercado!"</p>
+        <div class="tperson">
+          <div class="av">M</div>
+          <div><div class="nm">Márcia Nascimento</div><div class="rl">Fisioterapeuta e Empresária</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Felipe é meu mentor, amigo e parceiro. O treinamento foi revolucionário, mudando minha forma de pensar a vida e a empresa."</p>
+        <div class="tperson">
+          <div class="av">A</div>
+          <div><div class="nm">Adailton Silva</div><div class="rl">Empresário</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Minha identidade era bloqueada. Quando conheci o Felipe, acessei minha verdadeira identidade e hoje posso contribuir com as pessoas."</p>
+        <div class="tperson">
+          <div class="av">M</div>
+          <div><div class="nm">Marcos Rodrigues</div><div class="rl">Mentor e Empresário</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETALHES DO EVENTO -->
+<section class="section details">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Detalhes do evento</span>
+      <h2 class="section-title">Tudo o que você precisa <span class="hl">saber</span></h2>
+    </div>
+    <div class="details-box reveal" style="margin-top:40px">
+      <div class="details-inner">
+        <div class="dcell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div class="k">Data</div><div class="v">[DATA]<br>[DIA DA SEMANA]</div>
+        </div>
+        <div class="dcell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div class="k">Horário</div><div class="v">08:00h às 20h<br>Dia inteiro</div>
+        </div>
+        <div class="dcell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="k">Local</div><div class="v">Araraquara<br>São Paulo</div>
+        </div>
+        <div class="dcell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <div class="k">Formato</div><div class="v">Presencial<br>Vagas limitadas</div>
+        </div>
+      </div>
+    </div>
+    <p class="btn-note" style="margin-top:18px">O endereço completo é enviado por e-mail e WhatsApp após a confirmação da inscrição.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="investimento">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Garanta sua vaga</span>
+      <h2 class="section-title">Escolha o seu <span class="hl">lote</span></h2>
+      <p class="lead">Quanto antes você decide, menos investe. O valor sobe a cada lote, e as vagas são limitadas pela capacidade da sala.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="plan closed-plan reveal">
+        <div class="status closed">&#9679; Encerrado</div>
+        <div class="lot">Lote 1</div>
+        <div class="price"><small>R$</small> [000]<small>,00</small></div>
+        <div class="inst">à vista</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Acesso à imersão completa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Material de apoio</li>
+        </ul>
+        <button class="btn btn-ghost btn-block" disabled style="opacity:.5;cursor:not-allowed">Esgotado</button>
+      </div>
+
+      <div class="plan featured reveal">
+        <div class="tagpill">Mais vantajoso</div>
+        <div class="status active">&#9679; Lote atual · vagas abertas</div>
+        <div class="lot">Lote 2</div>
+        <div class="price"><small>R$</small> [000]<small>,00</small></div>
+        <div class="inst">ou 12x no cartão</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Acesso à imersão completa (dia inteiro)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Material de apoio</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Networking com empresários e líderes</li>
+        </ul>
+        <a href="#garanta-vaga" data-reveal="garanta-vaga" class="btn btn-primary btn-block btn-lg">Garantir minha vaga &rarr;</a>
+        <span class="btn-note">Pagamento 100% seguro</span>
+      </div>
+
+      <div class="plan reveal">
+        <div class="status soon">&#9679; Em breve</div>
+        <div class="lot">Lote 3</div>
+        <div class="price"><small>R$</small> [000]<small>,00</small></div>
+        <div class="inst">ou 12x no cartão</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Acesso à imersão completa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO (seção oculta) -->
+<section class="section pricing vlt-hidden" id="garanta-vaga">
+  <div class="container">
+    <div class="center">
+      <h2 class="section-title">Garanta a sua <span class="hl">vaga</span></h2>
+    </div>
+    <div class="form-embed">
+      <iframe
+        src="https://api.taticaleads.com.br/widget/form/rkYo33CblSOrjPXUSDDb"
+        style="width:100%;height:100%;border:none;border-radius:8px"
+        id="inline-rkYo33CblSOrjPXUSDDb"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="VLT - CAPTAÇÃO LP"
+        data-height="500"
+        data-layout-iframe-id="inline-rkYo33CblSOrjPXUSDDb"
+        data-form-id="rkYo33CblSOrjPXUSDDb"
+        title="VLT - CAPTAÇÃO LP">
+      </iframe>
+    </div>
+  </div>
+</section>
+<script src="https://api.taticaleads.com.br/js/form_embed.js"></script>
+
+<!-- GARANTIA -->
+<section class="section guarantee">
+  <div class="container">
+    <div class="g-box reveal">
+      <div class="g-seal"><div><div class="d">7</div><div class="t">Dias de Garantia</div></div></div>
+      <div>
+        <h3>Risco zero para você decidir hoje</h3>
+        <p>Inscreva-se com tranquilidade. Se em até 7 dias após a compra, e antes do evento, você sentir que o VLT não é para o seu momento, basta solicitar e devolvemos 100% do seu investimento. A decisão de transformar seus resultados não pode ter risco financeiro no caminho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title">Ainda com <span class="hl">dúvidas</span>?</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q">Para quem é o VLT, afinal?<span class="ico">+</span></button><div class="faq-a"><p>Para empresários, líderes comerciais, vendedores, gestores e qualquer pessoa que entende que vendas e liderança são habilidades que podem e devem ser treinadas. Se você quer vender mais com método, liderar com propósito e ter resultado consistente, o VLT é para você.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Preciso ter experiência em vendas ou liderança?<span class="ico">+</span></button><div class="faq-a"><p>Não. A imersão é conduzida de forma acessível e progressiva. Você não precisa de experiência anterior. Basta vir com abertura para aprender e praticar. Tanto iniciantes quanto profissionais experientes saem com ferramentas aplicáveis.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">O evento é presencial ou online?<span class="ico">+</span></button><div class="faq-a"><p>100% presencial, em Araraquara-SP. A força do VLT está na prática ao vivo, nas dinâmicas em grupo e na experiência de aprender fazendo, com feedback em tempo real.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Qual o horário e onde será?<span class="ico">+</span></button><div class="faq-a"><p>O evento acontece das 08:00h às 20h. O endereço completo em Araraquara é enviado por e-mail e WhatsApp logo após a confirmação da sua inscrição.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">A alimentação está inclusa?<span class="ico">+</span></button><div class="faq-a"><p>Não, porém teremos fornecedores parceiros para café e snacks durante o evento. Também indicaremos opções para almoço nos arredores.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Posso parcelar o investimento?<span class="ico">+</span></button><div class="faq-a"><p>Sim. Você pode pagar à vista ou parcelar em até 12x no cartão de crédito. O pagamento é processado em ambiente 100% seguro.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">E se eu desistir? Tem garantia?<span class="ico">+</span></button><div class="faq-a"><p>Sim. Você conta com 7 dias de garantia incondicional a partir da compra (respeitando a data do evento). Se não for para você, devolvemos 100% do valor, sem perguntas.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Posso levar minha equipe de vendas?<span class="ico">+</span></button><div class="faq-a"><p>Com certeza. Muitos empresários levam líderes e equipe comercial, e o aprendizado compartilhado potencializa os resultados na empresa. Basta realizar uma inscrição para cada pessoa enquanto houver vagas no lote.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final">
+  <div class="container">
+    <span class="eyebrow center" style="display:block;text-align:center">Sua decisão começa agora</span>
+    <h2>Você chegou até aqui porque <span class="hl">algo fez sentido</span>.</h2>
+    <p>Aquela sensação de que você poderia estar vendendo mais, liderando melhor, construindo resultado com mais consistência não é ilusão. É o sinal mais honesto que você tem. O dia do VLT vai acontecer de qualquer forma. A pergunta é se você vai estar na sala quando a chave virar.</p>
+    <a href="#investimento" class="btn btn-primary btn-lg">Chega de vender abaixo do meu potencial &rarr;</a>
+    <p style="margin-top:24px;font-size:.98rem">As vagas são limitadas. O próximo lote é mais caro. E a mentalidade que você tem hoje não muda sozinha.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-brand-inner">
+          <img src="logo/Logo_VLT.png" alt="VLT" />
+        </div>
+        <p>Imersão de Vendas, Empreendedorismo e Liderança com PNL aplicada. Para empresários e líderes comerciais. Felipe Castro, Araraquara-SP.</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/eusou.felipecastro/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/message/6XCIYAQHJXSGP1?text=Quero%20saber%20sobre%20o%20VLT" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.5-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.3.1.7-.1 1.3z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@eusou.felipecastro" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 001.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 001.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6.2 3.3-6.2 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 IFC — Instituto Felipe Castro. Todos os direitos reservados.</span>
+      <span>Felipe Castro &middot; Araraquara-SP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <div class="mc-info">
+    <div class="a">Lote 2</div>
+    <div class="b">R$ [000]</div>
+  </div>
+  <a href="#investimento" class="btn btn-primary">Garantir vaga</a>
+</div>
+
+</div>
+<!-- /vlt-page -->
+
+<script>
+  // ---- Countdown ----
+  (function(){
+    // PENDÊNCIA: substituir pela data real do evento
+    var target = new Date('2026-12-01T08:00:00-03:00').getTime();
+    var d = document.getElementById('cd-days'),
+        h = document.getElementById('cd-hours'),
+        m = document.getElementById('cd-min'),
+        s = document.getElementById('cd-sec');
+    function pad(n){return (n<10?'0':'')+n;}
+    function tick(){
+      var now = Date.now();
+      var diff = target - now;
+      if(diff < 0){ diff = 0; }
+      var days = Math.floor(diff/86400000);
+      var hrs  = Math.floor((diff%86400000)/3600000);
+      var mins = Math.floor((diff%3600000)/60000);
+      var secs = Math.floor((diff%60000)/1000);
+      d.textContent = pad(days);
+      h.textContent = pad(hrs);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var answer = item.querySelector('.faq-a');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ---- Scroll reveal ----
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // ---- Revelar seção oculta no clique do CTA ----
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      var sec = document.getElementById(el.getAttribute('data-reveal'));
+      if(!sec) return;
+      sec.classList.remove('vlt-hidden');
+      sec.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  // ---- Header shadow on scroll ----
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 20){ nav.style.background = 'rgba(10,10,12,.92)'; }
+    else { nav.style.background = 'rgba(10,10,12,.72)'; }
+  });
+</script>
+</body>
+</html>
